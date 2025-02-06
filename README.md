@@ -37,6 +37,7 @@ cd AnalyticalWays_Test
 ```
 
 ### **2. Abrir en Visual Studio**
+```bash
 1. Abrir AcmeSchool.sln.
 2. Compilar el proyecto
 dotnet build
