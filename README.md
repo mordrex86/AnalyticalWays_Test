@@ -20,7 +20,7 @@ AcmeSchool (Solución)
 │        │── Interfaces (Definiciones de repositorios)  
 │  
 │── AcmeSchool.Tests (Pruebas unitarias con xUnit, Moq y FluentAssertions)  
-
+```
 
 ## Decisiones Técnicas
 - Se utilizó arquitectura hexagonal para garantizar un diseño desacoplado y flexible.
@@ -32,15 +32,15 @@ AcmeSchool (Solución)
 ## Instalación y Ejecución
 ### **1. Clonar el Repositorio**
 ```bash
-git clone https://github.com/tu-repo/acme-school.git
-cd acme-school
+git clone https://github.com/mordrex86/AnalyticalWays_Test.git
+cd AnalyticalWays_Test
+```
 
 ### **2. Abrir en Visual Studio**
 1. Abrir AcmeSchool.sln.
 2. Compilar el proyecto
-3. Ejecutar pruebas en terminal con:
-```bash
-dotnet test
+dotnet build
+```
 
 ## Posibles Mejoras
 - Persistencia de datos: Actualmente el sistema no usa base de datos, pero la arquitectura permite integrarla en el futuro.
