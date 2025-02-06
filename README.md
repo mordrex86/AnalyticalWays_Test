@@ -1,4 +1,4 @@
-﻿#Test AnalyticalWays
+﻿## Test AnalyticalWays
 
 # AcmeSchool - Gestion de Cursos y Estudiantes
 
@@ -12,13 +12,14 @@ Este proyecto es una **libreria de clases en c# (.NET 8 ) que implementa la lóg
 - **100% cobertura de pruebas unitarias con xUnit y Moq**.
 
 ## Estructura del proyecto
-
-AcmeSchool (Solución)	
-	│── AcmeSchool.Core (Librería principal - Lógica de negocio) │
-		│── Domain (Modelo de dominio: entidades, value objects, excepciones) │ 
-		│── Application (Casos de uso y servicios) │ 
-			│── Interfaces (Definiciones de repositorios)
-	│── AcmeSchool.Tests (Pruebas unitarias con xUnit, Moq y FluentAssertions)
+```plaintext
+AcmeSchool (Solución)  
+│── AcmeSchool.Core (Librería principal - Lógica de negocio)  
+│    │── Domain (Modelo de dominio: entidades, value objects, excepciones)  
+│    │── Application (Casos de uso y servicios)  
+│        │── Interfaces (Definiciones de repositorios)  
+│  
+│── AcmeSchool.Tests (Pruebas unitarias con xUnit, Moq y FluentAssertions)  
 
 
 ## Decisiones Técnicas
