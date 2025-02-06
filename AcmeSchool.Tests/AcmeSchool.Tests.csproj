@@ -28,8 +28,7 @@
 	</ItemGroup>
 
 	<Target Name="RunTests" AfterTargets="Build">
-		<Exec Command="dotnet test --no-build --verbosity normal" />
+		<Exec Command="dotnet test --no-build --verbosity detailed" />
 	</Target>
-
 
 </Project>

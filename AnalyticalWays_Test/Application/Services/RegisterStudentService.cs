@@ -2,6 +2,7 @@
 
 using AcmeSchool.Core.Application.Interfaces;
 using AcmeSchool.Core.Domain.Entities;
+using AcmeSchool.Core.Domain.ValueObjects;
 
 public class RegisterStudentService
 {
@@ -14,8 +15,10 @@ public class RegisterStudentService
 
     public Student Execute(string name, int age)
     {
-        var student = new Student(name, age);
+        var studentName = new StudentName(name); // Crear el objeto de valor
+        var student = new Student(studentName, age);
         _studentRepository.Add(student);
         return student;
     }
+
 }

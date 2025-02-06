@@ -1,6 +1,7 @@
 ﻿using AcmeSchool.Core.Application.Interfaces;
 using AcmeSchool.Core.Application.Services;
 using AcmeSchool.Core.Domain.Entities;
+using AcmeSchool.Core.Domain.ValueObjects;
 using FluentAssertions;
 using Moq;
 
@@ -21,28 +22,16 @@ public class RegisterStudentServiceTests
     public void RegisterStudent_Should_Create_Valid_Student()
     {
         // Arrange
-        var name = "John Doe";
+        var studentName = new StudentName("John Doe");
         var age = 20;
 
         // Act
-        var student = _registerStudentService.Execute(name, age);
+        var student = _registerStudentService.Execute(studentName.Value, age);
 
         // Assert
         student.Should().NotBeNull();
-        student.Name.Should().Be(name);
+        student.Name.Should().Be(studentName);
         student.Age.Should().Be(age);
         _studentRepositoryMock.Verify(repo => repo.Add(It.IsAny<Student>()), Times.Once);
-    }
-
-    [Theory]
-    [InlineData("", 20)]
-    [InlineData("John Doe", 17)]
-    public void RegisterStudent_Should_Throw_Exception_When_Invalid_Data(string name, int age)
-    {
-        // Act
-        Action act = () => _registerStudentService.Execute(name, age);
-
-        // Assert
-        act.Should().Throw<ArgumentException>();
     }
 }

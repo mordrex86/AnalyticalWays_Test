@@ -1,10 +1,10 @@
-﻿using Xunit;
-using Moq;
-using FluentAssertions;
+﻿using AcmeSchool.Core.Application.Interfaces;
 using AcmeSchool.Core.Application.Services;
-using AcmeSchool.Core.Application.Interfaces;
 using AcmeSchool.Core.Domain.Entities;
 using AcmeSchool.Core.Domain.Exceptions;
+using AcmeSchool.Core.Domain.ValueObjects;
+using FluentAssertions;
+using Moq;
 
 namespace AcmeSchool.Tests.Services;
 
@@ -31,8 +31,11 @@ public class EnrollStudentServiceTests
     public void EnrollStudent_Should_Create_Enrollment_When_Payment_Is_Made()
     {
         // Arrange
-        var student = new Student("Alice", 20);
-        var course = new Course("Physics", 200, DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddMonths(1));
+        var studentName = new StudentName("Alice");
+        var student = new Student(studentName, 20);
+
+        var registrationFee = new RegistrationFee(200);
+        var course = new Course("Physics", registrationFee, DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddMonths(1));
 
         _studentRepositoryMock.Setup(repo => repo.GetById(student.Id)).Returns(student);
         _courseRepositoryMock.Setup(repo => repo.GetById(course.Id)).Returns(course);
@@ -51,8 +54,11 @@ public class EnrollStudentServiceTests
     public void EnrollStudent_Should_Throw_Exception_When_Payment_Is_Required_But_Not_Made()
     {
         // Arrange
-        var student = new Student("Bob", 22);
-        var course = new Course("Chemistry", 100, DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddMonths(1));
+        var studentName = new StudentName("Bob");
+        var student = new Student(studentName, 22);
+
+        var registrationFee = new RegistrationFee(100);
+        var course = new Course("Chemistry", registrationFee, DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddMonths(1));
 
         _studentRepositoryMock.Setup(repo => repo.GetById(student.Id)).Returns(student);
         _courseRepositoryMock.Setup(repo => repo.GetById(course.Id)).Returns(course);
@@ -62,6 +68,6 @@ public class EnrollStudentServiceTests
 
         // Assert
         act.Should().Throw<InvalidEnrollmentException>()
-            .WithMessage("Student must pay the registration fee to enroll.");
+           .WithMessage("Student must pay the registration fee to enroll.");
     }
 }

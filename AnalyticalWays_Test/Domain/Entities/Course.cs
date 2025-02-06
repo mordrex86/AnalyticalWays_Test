@@ -1,22 +1,21 @@
 ﻿namespace AcmeSchool.Core.Domain.Entities;
 
+using AcmeSchool.Core.Domain.ValueObjects;
+
 public class Course
 {
     public Guid Id { get; private set; }
     public string Name { get; private set; } = string.Empty;
-    public decimal RegistrationFee { get; private set; }
+    public RegistrationFee RegistrationFee { get; private set; } = null!;
     public DateTime StartDate { get; private set; }
     public DateTime EndDate { get; private set; }
 
-    private Course() { } // Constructor privado para futuras integraciones con EF Core
+    private Course() { }
 
-    public Course(string name, decimal registrationFee, DateTime startDate, DateTime endDate)
+    public Course(string name, RegistrationFee registrationFee, DateTime startDate, DateTime endDate)
     {
         if (string.IsNullOrWhiteSpace(name))
             throw new ArgumentException("Course name cannot be empty.", nameof(name));
-
-        if (registrationFee < 0)
-            throw new ArgumentException("Registration fee cannot be negative.", nameof(registrationFee));
 
         if (startDate >= endDate)
             throw new ArgumentException("Start date must be before end date.");

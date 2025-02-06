@@ -28,7 +28,7 @@ public class EnrollStudentService
         var course = _courseRepository.GetById(courseId)
             ?? throw new DomainException("Course not found.");
 
-        if (!hasPaid && course.RegistrationFee > 0)
+        if (!hasPaid && course.RegistrationFee.Amount > 0) // Acceder a la propiedad Amount
             throw new InvalidEnrollmentException("Student must pay the registration fee to enroll.");
 
         var enrollment = new Enrollment(student, course, hasPaid);

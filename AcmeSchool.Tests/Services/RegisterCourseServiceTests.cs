@@ -1,8 +1,10 @@
-﻿using AcmeSchool.Core.Application.Interfaces;
-using AcmeSchool.Core.Application.Services;
-using AcmeSchool.Core.Domain.Entities;
-using FluentAssertions;
+﻿using Xunit;
 using Moq;
+using FluentAssertions;
+using AcmeSchool.Core.Application.Services;
+using AcmeSchool.Core.Application.Interfaces;
+using AcmeSchool.Core.Domain.Entities;
+using AcmeSchool.Core.Domain.ValueObjects;
 
 namespace AcmeSchool.Tests.Services;
 
@@ -22,12 +24,12 @@ public class RegisterCourseServiceTests
     {
         // Arrange
         var name = "Mathematics";
-        var registrationFee = 100;
+        var registrationFee = new RegistrationFee(100); // Usar el ValueObject
         var startDate = DateTime.UtcNow.AddDays(1);
         var endDate = DateTime.UtcNow.AddMonths(1);
 
         // Act
-        var course = _registerCourseService.Execute(name, registrationFee, startDate, endDate);
+        var course = _registerCourseService.Execute(name, registrationFee.Amount, startDate, endDate);
 
         // Assert
         course.Should().NotBeNull();
