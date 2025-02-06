@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeSchool.Core", "AnalyticalWays_Test\AcmeSchool.Core.csproj", "{DF4258F1-5B87-41CF-B140-08775EA466DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeSchool.Tests", "AcmeSchool.Tests\AcmeSchool.Tests.csproj", "{4630EE4A-D783-4643-A153-B88495E7A0B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{18D1C490-0AF9-4203-8378-68779D1A18BA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{499797C0-15D7-4C07-8D09-91609C3A12B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C704AD1F-88C0-4333-A004-0EF71BC2D3BD}"
+	ProjectSection(SolutionItems) = preProject
+		dotnet-test.yml = dotnet-test.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF4258F1-5B87-41CF-B140-08775EA466DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF4258F1-5B87-41CF-B140-08775EA466DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF4258F1-5B87-41CF-B140-08775EA466DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF4258F1-5B87-41CF-B140-08775EA466DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4630EE4A-D783-4643-A153-B88495E7A0B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4630EE4A-D783-4643-A153-B88495E7A0B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4630EE4A-D783-4643-A153-B88495E7A0B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4630EE4A-D783-4643-A153-B88495E7A0B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C704AD1F-88C0-4333-A004-0EF71BC2D3BD} = {499797C0-15D7-4C07-8D09-91609C3A12B3}
+	EndGlobalSection
+EndGlobal
