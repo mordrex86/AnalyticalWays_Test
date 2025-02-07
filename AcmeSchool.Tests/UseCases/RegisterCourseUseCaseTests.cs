@@ -1,10 +1,9 @@
-﻿using Xunit;
-using Moq;
-using FluentAssertions;
+﻿using AcmeSchool.Core.Application.Interfaces;
 using AcmeSchool.Core.Application.Services;
-using AcmeSchool.Core.Application.Interfaces;
 using AcmeSchool.Core.Domain.Entities;
 using AcmeSchool.Core.Domain.ValueObjects;
+using FluentAssertions;
+using Moq;
 
 namespace AcmeSchool.Tests.Services;
 
