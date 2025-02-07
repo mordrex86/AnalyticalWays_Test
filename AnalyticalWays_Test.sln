@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35514.174 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeSchool.Core", "AnalyticalWays_Test\AcmeSchool.Core.csproj", "{DF4258F1-5B87-41CF-B140-08775EA466DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeSchool.Core", "AcmeSchool.Core\AcmeSchool.Core.csproj", "{DF4258F1-5B87-41CF-B140-08775EA466DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeSchool.Tests", "AcmeSchool.Tests\AcmeSchool.Tests.csproj", "{4630EE4A-D783-4643-A153-B88495E7A0B8}"
 EndProject

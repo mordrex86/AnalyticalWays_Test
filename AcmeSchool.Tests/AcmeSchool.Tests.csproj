@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\AnalyticalWays_Test\AcmeSchool.Core.csproj" />
+	  <ProjectReference Include="..\AcmeSchool.Core\AcmeSchool.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -29,9 +29,7 @@
 	</ItemGroup>
 
 	<Target Name="RunTests" AfterTargets="Build">
-		<Exec Command="dotnet test --no-build --verbosity detailed"
-			  StandardOutputImportance="High"
-			  StandardErrorImportance="High" />
+		<Exec Command="dotnet test --no-build --verbosity detailed" StandardOutputImportance="High" StandardErrorImportance="High" />
 	</Target>
 
 </Project>
