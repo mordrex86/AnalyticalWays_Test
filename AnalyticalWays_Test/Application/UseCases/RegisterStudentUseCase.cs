@@ -4,11 +4,11 @@ using AcmeSchool.Core.Application.Interfaces;
 using AcmeSchool.Core.Domain.Entities;
 using AcmeSchool.Core.Domain.ValueObjects;
 
-public class RegisterStudentService
+public class RegisterStudentUseCase
 {
     private readonly IStudentRepository _studentRepository;
 
-    public RegisterStudentService(IStudentRepository studentRepository)
+    public RegisterStudentUseCase(IStudentRepository studentRepository)
     {
         _studentRepository = studentRepository;
     }

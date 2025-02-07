@@ -4,13 +4,13 @@ using AcmeSchool.Core.Application.Interfaces;
 using AcmeSchool.Core.Domain.Entities;
 using AcmeSchool.Core.Domain.Exceptions;
 
-public class EnrollStudentService
+public class EnrollStudentUseCase
 {
     private readonly IStudentRepository _studentRepository;
     private readonly ICourseRepository _courseRepository;
     private readonly IEnrollmentRepository _enrollmentRepository;
 
-    public EnrollStudentService(
+    public EnrollStudentUseCase(
         IStudentRepository studentRepository,
         ICourseRepository courseRepository,
         IEnrollmentRepository enrollmentRepository)

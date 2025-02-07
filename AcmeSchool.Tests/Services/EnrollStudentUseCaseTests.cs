@@ -8,20 +8,20 @@ using Moq;
 
 namespace AcmeSchool.Tests.Services;
 
-public class EnrollStudentServiceTests
+public class EnrollStudentUseCaseTests
 {
     private readonly Mock<IStudentRepository> _studentRepositoryMock;
     private readonly Mock<ICourseRepository> _courseRepositoryMock;
     private readonly Mock<IEnrollmentRepository> _enrollmentRepositoryMock;
-    private readonly EnrollStudentService _enrollStudentService;
+    private readonly EnrollStudentUseCase _enrollStudentService;
 
-    public EnrollStudentServiceTests()
+    public EnrollStudentUseCaseTests()
     {
         _studentRepositoryMock = new Mock<IStudentRepository>();
         _courseRepositoryMock = new Mock<ICourseRepository>();
         _enrollmentRepositoryMock = new Mock<IEnrollmentRepository>();
 
-        _enrollStudentService = new EnrollStudentService(
+        _enrollStudentService = new EnrollStudentUseCase(
             _studentRepositoryMock.Object,
             _courseRepositoryMock.Object,
             _enrollmentRepositoryMock.Object);

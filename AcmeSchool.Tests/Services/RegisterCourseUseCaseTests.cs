@@ -8,15 +8,15 @@ using AcmeSchool.Core.Domain.ValueObjects;
 
 namespace AcmeSchool.Tests.Services;
 
-public class RegisterCourseServiceTests
+public class RegisterCourseUseCaseTests
 {
     private readonly Mock<ICourseRepository> _courseRepositoryMock;
-    private readonly RegisterCourseService _registerCourseService;
+    private readonly RegisterCourseUseCase _registerCourseService;
 
-    public RegisterCourseServiceTests()
+    public RegisterCourseUseCaseTests()
     {
         _courseRepositoryMock = new Mock<ICourseRepository>();
-        _registerCourseService = new RegisterCourseService(_courseRepositoryMock.Object);
+        _registerCourseService = new RegisterCourseUseCase(_courseRepositoryMock.Object);
     }
 
     [Fact]

@@ -7,15 +7,15 @@ using Moq;
 
 namespace AcmeSchool.Tests.Services;
 
-public class RegisterStudentServiceTests
+public class RegisterStudentUseCaseTests
 {
     private readonly Mock<IStudentRepository> _studentRepositoryMock;
-    private readonly RegisterStudentService _registerStudentService;
+    private readonly RegisterStudentUseCase _registerStudentService;
 
-    public RegisterStudentServiceTests()
+    public RegisterStudentUseCaseTests()
     {
         _studentRepositoryMock = new Mock<IStudentRepository>();
-        _registerStudentService = new RegisterStudentService(_studentRepositoryMock.Object);
+        _registerStudentService = new RegisterStudentUseCase(_studentRepositoryMock.Object);
     }
 
     [Fact]
